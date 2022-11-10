@@ -1,12 +1,31 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+@font-face {
+    font-family: 'Proxima';
+    src: url('fonts/Mark-Simonson-Proxima-Nova-Extra-Condensed-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Proxima';
+    src: url('fonts/Mark-Simonson-Proxima-Nova-Condensed-Semibold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Proxima';
+    src: url('fonts/Mark-Simonson-Proxima-Nova-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+}
+
 /*Обнуление*/
 *{padding:0;margin:0;border:0;}
 *,*:before,*:after{-moz-box-sizing:border-box;-webkit-box-sizing:border-box;box-sizing:border-box;}
 :focus,:active{outline:none;}
 a:focus,a:active{outline:none;}
 nav,footer,header,aside{display:block;}
-html,body{height:100%;width:100%;font-size:100%;line-height:1;font-size:14px;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
+html,body{height:100%;width:100%;font-size:100%;line-height:1;-ms-text-size-adjust:100%;-moz-text-size-adjust:100%;-webkit-text-size-adjust:100%;}
 input,button,textarea{font-family:inherit;}
 input::-ms-clear{display:none;}
 button{cursor:pointer;}
@@ -18,6 +37,12 @@ img{vertical-align:top;}
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
 /*--------------------*/
 
+body {
+    font-size: 1rem;
+    background-color: #F5F5F5;
+    font-family: 'Proxima', sans-serif;
+}
+
 .wrapper {
 	min-height: 100%;
 	display: flex;
@@ -27,4 +52,10 @@ h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight:inherit;}
 
 .wrapper main {
 	flex: 1 1 auto;
+}
+
+.container {
+    max-width: 1430px;
+    margin: 0 auto;
+    padding: 0px 15px;
 }

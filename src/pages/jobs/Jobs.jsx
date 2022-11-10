@@ -4,7 +4,11 @@ import React from "react";
 const Jobs = () => {
     return(
         <div className='wrapper'>
-            <main>news</main>
+            <main className='main'>
+                <div className="main__container">
+                    
+                </div>
+            </main>
         </div>
     );
 };
