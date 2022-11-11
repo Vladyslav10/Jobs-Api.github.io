@@ -35,6 +35,9 @@
 .article__row-content {
     @media (max-width: 768px){
         flex-direction: column-reverse;
+        & > .article__column-additional {
+            align-self: flex-end;
+        }
     }
 }
 
@@ -93,6 +96,7 @@
 .article__save {
     display: none;
     @media (min-width:768px){
+        display: blockq;
         align-self: flex-end;
         color: white;
         transition: all 0.3s ease 0s;

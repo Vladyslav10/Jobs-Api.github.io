@@ -6,7 +6,6 @@ import './JobsItem.scss';
 const JobsItem = (props) => {
   const job = props.jobs;
   const date = new Date(job.updatedAt);
-  console.log(date);
 
   return (
     <article className='article'>
