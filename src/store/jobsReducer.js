@@ -23,7 +23,7 @@ export default function jobsReducer(state = defaultState, action) {
       return {
         ...state,
         items: action.payload,
-        //isFetching: false,
+        isFetching: false,
       };
     case SET_JOBS_ON_PAGE:
       return {

@@ -4,7 +4,7 @@ import { ReactComponent as Left } from '../../assets/arrow-left.svg';
 import { ReactComponent as Right } from '../../assets/arrow-right.svg';
 import { getJobs, getPaginationList } from '../../actions/jobs';
 import JobsList from '../../components/jobs-list/JobsList';
-import { setCurrentPage } from '../../store/jobsReducer';
+import { setCurrentPage, setIsFetching } from '../../store/jobsReducer';
 import { createPages } from '../../utils/pagesCreator';
 import './Jobs.scss';
 
@@ -21,10 +21,12 @@ const Jobs = () => {
   const pages = [];
 
   useEffect(() => {
+    dispatch(setIsFetching(true));
     dispatch(getJobs(perPage));
   }, []);
 
   useEffect(() => {
+    
     dispatch(getPaginationList(currentPage, perPage, totalCount, jobs));
   }, [currentPage, jobs]);
 
@@ -35,6 +37,11 @@ const Jobs = () => {
     } else {
         dispatch(setCurrentPage(currentPage + 1))
     }
+  }
+
+  function setPage(e, page) {
+    e.preventDefault();
+    dispatch(setCurrentPage(page))
   }
 
   function leftStep(e) {
@@ -72,7 +79,7 @@ const Jobs = () => {
                     <a
                       href='!#'
                       className={currentPage === page ? 'main__page-current main__page' : 'main__page'}
-                        onClick={()=> dispatch(setCurrentPage(page))}
+                      onClick={(e)=> setPage(e, page)}
                     >
                       {page}
                     </a>

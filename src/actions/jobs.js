@@ -30,7 +30,6 @@ export const getJobs = (perPage) => {
 
 export const getPaginationList = (currentPage, perPage, totalCount, jobs) => {
   return (dispatch) => {
-    dispatch(setIsFetching(true));
     if (currentPage * perPage > totalCount) {
       dispatch(setJobsOnPage([...jobs].slice(currentPage * perPage - perPage)));
     } else {
@@ -43,6 +42,5 @@ export const getPaginationList = (currentPage, perPage, totalCount, jobs) => {
         )
       );
     }
-    dispatch(setIsFetching(false));
   };
 };
