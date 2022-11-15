@@ -1,3 +1,7 @@
+.main-about {
+    color: #3a4562;
+}
+
 .main-about__row {
     display: flex;
     justify-content: space-between;
@@ -7,7 +11,7 @@
     max-width: 1260px;
 }
 
-.main-about__column{
+.main-about__column {
     flex: 0 1 34%;
 }
 
@@ -16,8 +20,11 @@
     margin: 0px 130px 0px 0px;
 }
 
+.main-about__body {
+    padding: 0px 0px 86px 0px;
+}
 .main-about__body > .main-about__row {
-    margin: 0px 0px 7px 0px;
+    margin: 32px 0px 7px 0px;
 }
 
 .main-about__top {
@@ -27,14 +34,14 @@
     margin: 0px 0px 39px 0px;
     padding: 0px 0px 9px 0px;
     position: relative;
-    &::after{
-        content:'';
+    &::after {
+        content: "";
         position: absolute;
         bottom: 0;
         left: 0;
         width: 100%;
         height: 1px;
-        background-color: #3A4562;
+        background-color: rgba(58, 69, 98, 0.16);
     }
 }
 
@@ -42,20 +49,15 @@
     font-weight: 700;
     font-size: 28px;
     line-height: 1.21;
-    color: #3A4562;
     letter-spacing: 0.41px;
 }
 
 .main-about__job {
     font-weight: 700;
     font-size: 24px;
-    color: #3A4562;
-    letter-spacing: -0.60px;
+    letter-spacing: -0.6px;
     line-height: 1.25;
-}
-
-.main-about__salary {
-
+    max-width: 501px;
 }
 
 .main-about__budget {
@@ -66,12 +68,83 @@
 }
 
 .main-about__budget-info {
-
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: -0.56px;
 }
 
 .main-about__date {
-    font-family: 'Roboto', sans-serif;
+    font-family: "Roboto", sans-serif;
     color: rgba(56, 65, 93, 0.36);
     font-size: 18px;
     line-height: 1.33;
+    margin: 0px 0px 45px 0px;
+}
+
+.main-about__body-title {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 1.25;
+    letter-spacing: -0.63px;
+    margin: 0px 0px 10px 0px;
+}
+
+.main-about__description {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: -0.56px;
+    margin: 0px 0px 25px 0px;
+}
+
+.main-about__list-description {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: -0.56px;
+}
+
+.main-about__list {
+    margin: 0px 0px 35px 0px;
+    & > li {
+        font-family: "Roboto", sans-serif;
+        font-size: 18px;
+        line-height: 1.33;
+        letter-spacing: -0.56px;
+        position: relative;
+        padding: 0px 0px 0px 20px;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 7.5px;
+            left: 0;
+            width: 9px;
+            height: 9px;
+            background-color: rgba(56, 69, 100, 0.6326);
+        }
+    }
+}
+
+.main-about__bottom > div > .main-about__title {
+    padding: 0px 0px 9px 0px;
+    margin: 0px 0px 25px 0px;
+    position: relative;
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: rgba(58, 69, 98, 0.16);
+    }
+}
+
+.main-about__subtitle {
+    font-family: "Roboto", sans-serif;
+    font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: -0.56px;
+    margin: 0px 0px 10px 0px;
 }
