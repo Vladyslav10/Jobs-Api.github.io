@@ -1,4 +1,5 @@
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ReactComponent as Place } from '../../assets/place.svg';
 import { ReactComponent as Save } from '../../assets/save.svg';
 import './JobsItem.scss';
@@ -6,6 +7,7 @@ import './JobsItem.scss';
 const JobsItem = (props) => {
   const job = props.jobs;
   const date = new Date(job.updatedAt);
+  const router = useNavigate();
 
   return (
     <article className='article'>
@@ -21,7 +23,7 @@ const JobsItem = (props) => {
         <div className='article__column article__column-content'>
           <div className='article__row article__row-content'>
             <div className='article__column-description'>
-              <h2 className='article__title'>{job.title}</h2>
+              <h2 className='article__title' onClick={() => router(`/jobs/${job.id}`)}>{job.title}</h2>
               <p className='article__text'>
                 Department name • Allgemeines Krankenhaus der Stadt Wien - AKH
               </p>

@@ -26,7 +26,6 @@ const Jobs = () => {
   }, []);
 
   useEffect(() => {
-    
     dispatch(getPaginationList(currentPage, perPage, totalCount, jobs));
   }, [currentPage, jobs]);
 
@@ -55,8 +54,6 @@ const Jobs = () => {
 
   createPages(pages, pagesCount, currentPage);
 
-  console.log(jobsOnPage);
-
   return (
     <div className='wrapper'>
       <main className='main'>
@@ -70,7 +67,7 @@ const Jobs = () => {
           {isFetchError === false && isFetching === false && (
             <JobsList jobs={jobsOnPage} />
           )}
-          {jobsOnPage.length > 0 && (
+          {isFetching === false && isFetchError === false && (
             <div className='main__pages'>
               <ul className='main__list'>
                 <li><a href="!#" className='main__arrow main__arrow-left' onClick={(e) => leftStep(e)}><Left/></a></li>

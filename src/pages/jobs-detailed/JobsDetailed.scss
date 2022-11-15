@@ -1,0 +1,77 @@
+.main-about__row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.main-about__container {
+    max-width: 1260px;
+}
+
+.main-about__column{
+    flex: 0 1 34%;
+}
+
+.main-about__column-content {
+    flex: 1 1 66%;
+    margin: 0px 130px 0px 0px;
+}
+
+.main-about__body > .main-about__row {
+    margin: 0px 0px 7px 0px;
+}
+
+.main-about__top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 0px 0px 39px 0px;
+    padding: 0px 0px 9px 0px;
+    position: relative;
+    &::after{
+        content:'';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background-color: #3A4562;
+    }
+}
+
+.main-about__title {
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 1.21;
+    color: #3A4562;
+    letter-spacing: 0.41px;
+}
+
+.main-about__job {
+    font-weight: 700;
+    font-size: 24px;
+    color: #3A4562;
+    letter-spacing: -0.60px;
+    line-height: 1.25;
+}
+
+.main-about__salary {
+
+}
+
+.main-about__budget {
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: -0.63px;
+    line-height: 1.25;
+}
+
+.main-about__budget-info {
+
+}
+
+.main-about__date {
+    font-family: 'Roboto', sans-serif;
+    color: rgba(56, 65, 93, 0.36);
+    font-size: 18px;
+    line-height: 1.33;
+}

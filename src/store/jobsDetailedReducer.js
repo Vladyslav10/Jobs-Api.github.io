@@ -1,37 +1,31 @@
-// const SET_REPOS = "SET_REPOS"
-// const SET_IS_FETCHING = "SET_IS_FETCHING"
-// const SET_FETCH_ERROR = "SET_FETCH_ERROR"
+const SET_JOB = 'SET_JOB';
+const SET_IS_JOB_FETCHING = 'SET_IS_JOB_FETCHING';
 
 const defaultState = {
-  // items: [],
-  // isFetching: true,
-  // isFetchError: false
+  item: {},
+  isJobFetching: true,
 };
 
 export default function jobsDetailedReducer(state = defaultState, action) {
   switch (action.type) {
-    // case SET_REPOS:
-    //     return {
-    //         ...state,
-    //         items: action.payload.items,
-    //         totalCount: action.payload.total_count,
-    //         isFetching: false
-    //     }
-    // case SET_IS_FETCHING:
-    //     return {
-    //         ...state,
-    //         isFetching: action.payload
-    //     }
-    // case SET_FETCH_ERROR:
-    //     return {
-    //         ...state,
-    //         isFetchError: action.payload
-    //     }
+    case SET_JOB:
+      return {
+        ...state,
+        item: action.payload,
+        isJobFetching: false,
+      };
+    case SET_IS_JOB_FETCHING:
+      return {
+        ...state,
+        isJobFetching: action.payload,
+      };
     default:
       return state;
   }
 }
 
-// export const setRepos = (repos) => ({type:SET_REPOS, payload:repos})
-// export const setIsFetching = (bool) => ({type:SET_IS_FETCHING, payload:bool})
-// export const setFetchError = (bool) => ({type:SET_FETCH_ERROR, payload:bool})
+export const setJob = (jobs) => ({ type: SET_JOB, payload: jobs });
+export const setIsJobFetching = (bool) => ({
+  type: SET_IS_JOB_FETCHING,
+  payload: bool,
+});

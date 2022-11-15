@@ -43,6 +43,10 @@ body {
     font-family: 'Proxima', sans-serif;
 }
 
+#root {
+    height: 100%;
+}
+
 .wrapper {
 	min-height: 100%;
 	display: flex;

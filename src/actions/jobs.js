@@ -8,6 +8,8 @@ import {
   setTotalCount,
 } from '../store/jobsReducer';
 
+import { setJob, setIsJobFetching } from '../store/jobsDetailedReducer';
+
 export const getJobs = (perPage) => {
   return async (dispatch) => {
     try {
@@ -21,9 +23,6 @@ export const getJobs = (perPage) => {
     } catch (e) {
       dispatch(setFetchError(true));
       dispatch(setIsFetching(false));
-      setTimeout(() => {
-        dispatch(setFetchError(false));
-      }, 4000);
     }
   };
 };
@@ -42,5 +41,12 @@ export const getPaginationList = (currentPage, perPage, totalCount, jobs) => {
         )
       );
     }
+  };
+};
+
+export const getCurrentJOb = (id, items) => {
+  return (dispatch) => {
+    dispatch(setIsJobFetching(true));
+    dispatch(setJob(items.filter((el) => el.id === id)[0]));
   };
 };
