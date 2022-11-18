@@ -1,0 +1,30 @@
+.main-about__option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 15px;
+    border: 1px solid;
+    border-radius: 8px;
+}
+
+.main-about__option-employment {
+    background-color: rgba(85, 105, 158, 0.3);
+    color: #55699E;
+    border-color: rgba(85, 105, 158, 1);
+}
+
+.main-about__option-benefits {
+    color: #988B49;
+    border-color: rgba(255, 207, 0, 1);
+    background-color: rgba(255, 207, 0, 0.15);
+}
+
+.main-about__option-image {
+    color: #988B49;
+    border: none;
+    padding: 0;
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    height: 133px;
+}

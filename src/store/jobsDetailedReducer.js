@@ -12,7 +12,6 @@ export default function jobsDetailedReducer(state = defaultState, action) {
       return {
         ...state,
         item: action.payload,
-        isJobFetching: false,
       };
     case SET_IS_JOB_FETCHING:
       return {

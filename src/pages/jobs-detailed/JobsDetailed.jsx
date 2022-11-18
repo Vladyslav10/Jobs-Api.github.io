@@ -1,10 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { ReactComponent as Left } from '../../assets/arrow-left.svg';
 import MyButton from '../../components/UI/button/MyButton';
-import { useParams } from 'react-router-dom';
-import { getCurrentJOb } from '../../actions/jobs';
+import { ReactComponent as Save } from '../../assets/save.svg';
+import { ReactComponent as Share } from '../../assets/share.svg';
+import { useNavigate, useParams } from 'react-router-dom';
+import { getCurrentJob } from '../../actions/jobs';
 import './JobsDetailed.scss';
 import RenderOptions from '../../components/UI/list/RenderOptions';
+import { getLocalStorageItem } from '../../utils/localStorage';
+import RenderImages from '../../components/UI/list/RenderImages';
 
 const JobsDetailed = () => {
   const params = useParams();
@@ -12,12 +17,16 @@ const JobsDetailed = () => {
   const jobs = useSelector((state) => state.jobs.items);
   const job = useSelector((state) => state.jobsDetail.item);
   const isFetching = useSelector((state) => state.jobsDetail.isJobFetching);
+  const router = useNavigate();
+  const [jobItem, setJobItem] = useState(
+    getLocalStorageItem("job")
+  );
 
   useEffect(() => {
-    dispatch(getCurrentJOb(params.id, jobs));
+    dispatch(getCurrentJob(params.id, jobs));
   }, []);
 
-  console.log(job);
+  console.log(jobItem);
   return (
     <div className='wrapper'>
       <main className='main main-about'>
@@ -28,25 +37,27 @@ const JobsDetailed = () => {
               <div className='main-about__column main-about__column-content'>
                 <div className='main-about__top'>
                   <h1 className='main-about__title'>Job Detail</h1>
-                  <div className='main-about__save'></div>
-                  <div className='main-about__share'></div>
+                  <div className='main-about__images'>
+                    <div className='main-about__save'><Save/> <span>Save to my list</span></div>
+                    <div className='main-about__share'><Share/> <span>Share</span></div>
+                  </div>
                 </div>
                 <div className='main-about__body'>
                     <MyButton>Apply now</MyButton>
                   <div className='main-about__row'>
-                    <h3 className='main-about__job'>{job.title}</h3>
+                    <h3 className='main-about__job'>{jobItem.title || job.title}</h3>
                     <div className='main-about__salary'>
-                      <div className='main-about__budget'>€ {job.salary}</div>
+                      <div className='main-about__budget'>€ {jobItem.salary || job.salary}</div>
                       <div className='main-about__budget-info'>
                         Brutto, per year
                       </div>
                     </div>
                   </div>
                   <div className='main-about__date'>
-                    posted at: {new Date(job.updatedAt).toLocaleDateString()}
+                    posted at: {new Date(jobItem.updatedAt).toLocaleDateString() || new Date(job.updatedAt).toLocaleDateString()}
                   </div>
                   <h3 className='main-about__body-title'>Responsopilities</h3>
-                  <p className='main-about__description'>{job.description}</p>
+                  <p className='main-about__description'>{jobItem.description || job.description}</p>
                   <h2 className='main-about__body-title'>
                     Compensation & Benefits:
                   </h2>
@@ -65,13 +76,16 @@ const JobsDetailed = () => {
                     <div className='main-about__additional'>
                         <h2 className='main-about__title'>Additional info</h2>
                         <h4 className='main-about__subtitle'>Employment type</h4>
-                        <RenderOptions options={job.employment_type}/>
+                        <RenderOptions options={jobItem.employment_type || job.employment_type} mod='employment'/>
                         <h4 className='main-about__subtitle'>Benefits</h4>
-                        <RenderOptions options={job.benefits}/>
+                        <RenderOptions options={jobItem.benefits || job.benefits} mod='benefits'/>
                     </div>
                     <div className='main-about__attached'>
                         <h2 className='main-about__title'>Attached images</h2>
-                        
+                        <RenderImages options={jobItem.pictures || job.pictures} mod='image'/>
+                    </div>
+                    <div className='main-about__return' onClick={() => router('/')}>
+                      <MyButton><Left/><span>RETURN TO JOB BOARD</span></MyButton>
                     </div>
                 </div>
               </div>
