@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ReactComponent as Left } from '../../assets/arrow-left.svg';
+import Map from '../../assets/Map.png';
+import { ReactComponent as Place } from '../../assets/place.svg';
 import MyButton from '../../components/UI/button/MyButton';
 import { ReactComponent as Save } from '../../assets/save.svg';
 import { ReactComponent as Share } from '../../assets/share.svg';
@@ -43,7 +45,7 @@ const JobsDetailed = () => {
                   </div>
                 </div>
                 <div className='main-about__body'>
-                    <MyButton>Apply now</MyButton>
+                  <MyButton>Apply now</MyButton>
                   <div className='main-about__row'>
                     <h3 className='main-about__job'>{jobItem.title || job.title}</h3>
                     <div className='main-about__salary'>
@@ -89,7 +91,31 @@ const JobsDetailed = () => {
                     </div>
                 </div>
               </div>
-              <div className='main-about__column'></div>
+              <div className='main-about__column'>
+                <article className='main-about__article article-column'>
+                  <div className='article-column__circle'>
+                    <div className='article-column__top'>
+                      <h3 className='article-column__title'>
+                        Department name.<br/>{jobItem.name || job.name}
+                      </h3>
+                      <div className='article-column__address'>
+                        <Place/>{jobItem.address || job.address}
+                      </div>
+                      <div className='article-column__number'>
+                        <a href={`tel:${jobItem.phone || job.phone}`}>{jobItem.phone || job.phone}</a>
+                      </div>
+                      <div className='article-column__email'>
+                        <a href={`mailto:${jobItem.phone || job.phone}`}>{jobItem.email || job.email}</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div className='article-column__bottom'>
+                    <div className='article-column__img'>
+                      <img src={Map} alt="map" />
+                    </div>
+                  </div>
+                </article>
+              </div>
             </div>
           )}
         </div>
