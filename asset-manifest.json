@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Jobs-Api.github.io/static/css/main.847a2d9b.css",
+    "main.js": "/Jobs-Api.github.io/static/js/main.fdf3c787.js",
+    "static/media/Mark-Simonson-Proxima-Nova-Bold.ttf": "/Jobs-Api.github.io/static/media/Mark-Simonson-Proxima-Nova-Bold.e506b27f73fffbee2752.ttf",
+    "static/media/Mark-Simonson-Proxima-Nova-Condensed-Semibold.ttf": "/Jobs-Api.github.io/static/media/Mark-Simonson-Proxima-Nova-Condensed-Semibold.b36805470072a1bc63d0.ttf",
+    "static/media/Mark-Simonson-Proxima-Nova-Extra-Condensed-Regular.ttf": "/Jobs-Api.github.io/static/media/Mark-Simonson-Proxima-Nova-Extra-Condensed-Regular.72ab3c4059ac05f2fb2e.ttf",
+    "static/media/Map.png": "/Jobs-Api.github.io/static/media/Map.05ab15ac4200a249f7c3.png",
+    "static/media/arrow-right.svg": "/Jobs-Api.github.io/static/media/arrow-right.b44c944ae047bd8e61b673ece74d6617.svg",
+    "static/media/arrow-left.svg": "/Jobs-Api.github.io/static/media/arrow-left.ab6c44c8ac54839df688bd8c5fc32c6f.svg",
+    "static/media/share.svg": "/Jobs-Api.github.io/static/media/share.7381a5999554764f3ce8249d49192539.svg",
+    "index.html": "/Jobs-Api.github.io/index.html",
+    "static/media/save.svg": "/Jobs-Api.github.io/static/media/save.d37c1bcc3c45f4882625f11a0f107135.svg",
+    "static/media/place.svg": "/Jobs-Api.github.io/static/media/place.1c093ca173a538132f1ce31ab6296061.svg",
+    "main.847a2d9b.css.map": "/Jobs-Api.github.io/static/css/main.847a2d9b.css.map",
+    "main.fdf3c787.js.map": "/Jobs-Api.github.io/static/js/main.fdf3c787.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.847a2d9b.css",
+    "static/js/main.fdf3c787.js"
+  ]
+}
